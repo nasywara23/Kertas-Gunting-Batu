@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f4f4f4 0%, #e0e0e0 100%);
+}
+
+.game-container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.game-container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.choices-info {
+    background-color: white;
+    border: 1px solid #d3d3d3;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px;
+    color: #007BFF;
+    display: flex;
+    justify-content: space-around;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.score {
+    font-size: 40px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.versus {
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.choices {
+    margin-bottom: 20px;
+}
+
+.choice {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#result {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    padding: 0 10px;
+}
+
+#retry-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px auto;
+    transition: background-color 0.3s, transform 0.2s;
+    display: none; /* Sembunyikan tombol coba lagi secara default */
+}
+
+.choice:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@media (max-width: 477px) {
+    .game-container {
+        padding: 40px 20px;
+        width: 80%;
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .score {
+        font-size: 30px;
+    }
+
+    .choices {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .choice {
+        width: 50%;
+        margin: 5px 0;
+        font-size: 16px;
+    }
+
+    .choices-info {
+        flex-direction: column;
+    }
+}
+
+@keyframes flashRed {
+    0% { background-color: #ff4d4d; }
+    100% { background-color: #ffffff; }
+}
+
+.flash-red {
+    animation: flashRed 1.0s ease;
+}
